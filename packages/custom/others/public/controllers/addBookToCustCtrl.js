@@ -16,13 +16,17 @@ angular.module('mean.others').controller('AddBookToCustCtrl', ['$scope', 'Global
         }
         $scope.addToMyAccount = function(book){
             console.log("book to be added==>>",book.title);
-            
-            for(let i in $scope.global.user.booksAssigned){
-                if(i==book._id){
-                    alert("This Book is already in your account");
-                    return;
+            if($scope.global.user && $scope.global.user.booksAssigned){
+                for(var i=0;i<$scope.global.user.booksAssigned.length;i++){
+                    if($scope.global.user.booksAssigned[i]==book._id){
+                        console.log("book to be added==>>",book.title);
+                        alert("This Book is already in your account");
+                        return;
+                    }
+                    console.log("$scope.global.user.booksAssigned[i]d==>>",$scope.global.user.booksAssigned[i]);
                 }
             }
+            
             $http.post('/api/addBookToCustomer',{userid:$scope.global.user._id,bookToBeAdded:book._id})
             .success(function(res){
                 console.log("all books got", res);
