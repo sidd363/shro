@@ -209,7 +209,7 @@ exports.addBookToCustomer = function(req, res, next){
 	users.update({
 		_id:req.user._id
 	},{
-		$push:{
+		$addToSet:{
 		    booksAssigned: payload.bookToBeAdded
 		}
 	}).exec(function(err, result){
