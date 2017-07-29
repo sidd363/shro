@@ -15,7 +15,14 @@ angular.module('mean.others').controller('AddBookToCustCtrl', ['$scope', 'Global
             })
         }
         $scope.addToMyAccount = function(book){
-            console.log("book to be added==>>",book.title )
+            console.log("book to be added==>>",book.title);
+            
+            for(let i in $scope.global.user.booksAssigned){
+                if(i==book._id){
+                    alert("This Book is already in your account");
+                    return;
+                }
+            }
             $http.post('/api/addBookToCustomer',{userid:$scope.global.user._id,bookToBeAdded:book._id})
             .success(function(res){
                 console.log("all books got", res);
