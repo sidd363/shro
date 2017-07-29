@@ -109,6 +109,7 @@ angular.module('mean.users')
             Global.user = $rootScope.user;
             Global.authenticated = !! $rootScope.user;
             $rootScope.$emit('loggedin');
+            window.location.reload();
             $location.url('/');
           })
           .error(function(error) {
