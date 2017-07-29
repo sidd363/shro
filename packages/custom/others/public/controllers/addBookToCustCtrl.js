@@ -16,6 +16,7 @@ angular.module('mean.others').controller('AddBookToCustCtrl', ['$scope', 'Global
         }
         function alreadyAvailed(book){
             var toReturn=true;
+            console.log($scope.global.user, $scope.global, "in alreadyAvailed")
             if($scope.global.user && $scope.global.user.booksAssigned){
                 for(var i=0;i<$scope.global.user.booksAssigned.length;i++){
                     if($scope.global.user.booksAssigned[i]==book._id){
