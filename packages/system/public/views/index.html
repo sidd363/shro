@@ -1,0 +1,138 @@
+<section data-ng-controller="IndexController" >
+    <div class="col-md-12 first" ng-show="admin_enabled  && isLogin" ng-init="getAllBooks()">
+        <b><h4>Admin Section</h4><br>
+        <button ng-click="addNewBook()" class="btn btn-primary pull-right">AddNewBook</button>
+        <table class ="table table-striped">
+            <thead>
+                <th>
+                    Title
+                </th>
+                <th>
+                    Authors
+                </th>
+                <th>
+                    GlobalBookId
+                </th>
+                <th>
+                    Ebookisbn10
+                </th>
+                <th>
+                    Ebookisbn13
+                </th>
+                <th>
+                    Printisbn10
+                </th>
+                <th>
+                    Printisbn13
+                </th>
+                <th>
+                    Librarysupported
+                </th>
+                <th>
+                    Editiontype
+                </th>
+                <th>
+                    Previewlink
+                </th>
+                <th>
+                    Edit
+                </th>
+                <th>
+                    Remove
+                </th>
+                <th>
+                    AssignedTo
+                </th>
+                <th>
+                    Assign
+                </th>
+                
+            </thead>
+            <tbody ng-repeat="book in bookArr">
+                <tr>
+                    <td>
+                        {{book.title}}
+                    </td>
+                    <td>
+                        {{book.authors.toString()}}
+                    </td>
+                    <td>
+                        {{book.globalBookId}}
+                    </td>
+
+                    <td>
+                        {{book.ebookisbn10}}
+                    </td>
+                    <td>
+                        {{book.ebookisbn13}}
+                    </td>
+                    <td>
+                        {{book.printisbn10}}
+                    </td>
+                    <td>
+                        {{book.printisbn13}}
+                    </td>
+                    <td>
+                        {{book.librarysupported}}
+                    </td>
+                    <td>
+                        {{book.editiontype}}
+                    </td>
+                    <td>
+                        {{book.previewlink}}
+                    </td>
+                    <th>
+                       <button ng-click="editBook(book)" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span></button> 
+                    </th>
+                    <th>
+                        <button ng-click="removeBook(book)" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></button> 
+                    </th>
+                    <th>
+                        <button ng-click="assignedCustomers(book)" class="btn btn-default"><span class="glyphicon glyphicon-list-alt"></button> 
+                    </th>
+                    <th>
+                        <button ng-click="assignCustomers(book)" class="btn btn-primary"><span class="glyphicon glyphicon-user"></button> 
+                    </th>
+                </tr>
+            </tbody>
+            
+        </table>
+    </div>
+    <div class="col-md-12 first" ng-show="!admin_enabled && isLogin" ng-init="getCustomerBooks()">
+       <b><h4> Welcome to Loopback</h4><br>
+        <button ng-click="addBookToCustomer()" class="btn btn-primary  pull-right">AddNewBook</button>
+        <table  class ="table table-striped">
+            <thead>
+                <th>
+                    Title
+                </th>
+                <th>
+                    Authors
+                </th>
+                
+                <th>
+                    Remove
+                </th>
+                
+            </thead>
+            <tbody ng-repeat="book in customerBookArr">
+                <tr>
+                    <td>
+                        {{book.title}}
+                    </td>
+                    <td>
+                        {{book.authors.toString()}}
+                    </td>
+                    <th>
+                        <button ng-click="removeBookCustomer(book)" class="btn btn-primary"><span class="glyphicon glyphicon-trash"></button> 
+                    </th>
+                </tr>
+            </tbody>
+            
+        </table>
+    </div>
+    <div class="col-md-12 first" ng-show="!isLogin" >
+        <b><h1>Please Login/Signup To Continue</h1>
+    </div>
+</section>
+

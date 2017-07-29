@@ -1,0 +1,82 @@
+<section data-ng-controller="AddBookToCustCtrl" ng-init="displayAllBooks()">
+    <div class="col-md-12 first">
+   <h3>Available books</h3> <br>
+    <table class ="table table-striped">
+        <thead>
+            <th>
+                Title
+            </th>
+            <th>
+                Authors
+            </th>
+            <th>
+                GlobalBookId
+            </th>
+            <th>
+                Ebookisbn10
+            </th>
+            <th>
+                Ebookisbn13
+            </th>
+            <th>
+                Printisbn10
+            </th>
+            <th>
+                Printisbn13
+            </th>
+            <th>
+                Librarysupported
+            </th>
+            <th>
+                Editiontype
+            </th>
+            <th>
+                Previewlink
+            </th>
+            <th>
+                AddToMyAccount
+            </th>
+            
+        </thead>
+        <tbody ng-repeat="book in bookArr">
+            <tr>
+                <td>
+                    {{book.title}}
+                </td>
+                <td>
+                    {{book.authors.toString()}}
+                </td>
+                <td>
+                    {{book.globalBookId}}
+                </td>
+
+                <td>
+                    {{book.ebookisbn10}}
+                </td>
+                <td>
+                    {{book.ebookisbn13}}
+                </td>
+                <td>
+                    {{book.printisbn10}}
+                </td>
+                <td>
+                    {{book.printisbn13}}
+                </td>
+                <td>
+                    {{book.librarysupported}}
+                </td>
+                <td>
+                    {{book.editiontype}}
+                </td>
+                <td>
+                    {{book.previewlink}}
+                </td>
+                <th>
+                   <button ng-click="addToMyAccount(book)"  class="btn btn-success" ><span class="glyphicon glyphicon-check"></button> 
+                </th>
+            </tr>
+        </tbody>
+        
+    </table>
+    </div>
+</section>

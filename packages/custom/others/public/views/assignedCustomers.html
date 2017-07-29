@@ -1,0 +1,29 @@
+
+
+
+<section class="welcome container-fluid" >
+    <div ng-controller="assignedCustModalCtrl" class="modal-demo" ng-init="getAllAssignedCustomers()" >
+        <table class ="table table-striped">
+	        <thead>
+	            <th>
+	                Username
+	            </th>
+	            
+	            <th>
+	                Unassign
+	            </th>
+	            
+	        </thead>
+	        <tbody >
+	            <tr>
+	                <td>
+	                    {{user.username}}
+	                </td>
+	                <th>
+	                   <button ng-click="unassign(user)" class="btn btn-primary"><span class="glyphicon glyphicon-trash"></button> 
+	                </th>
+	            </tr>
+	        </tbody>
+        </table>
+    </div>
+</section>

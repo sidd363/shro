@@ -1,0 +1,51 @@
+
+<section class="welcome container-fluid" >
+    <div ng-controller="editModalCtrl" class="modal-demo">
+        <div class="col-md-12 first">
+            <form>
+            <div class="form-group">
+                <label>Edit globalbookid:</label>
+                <input type="text" ng-model="book.globalbookid" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Edit title:</label>
+                <input type="text" ng-model="book.title" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Edit ebookisbn10:</label>
+                <input type="text" ng-model="book.ebookisbn10" class="form-control" >
+            </div>
+            <div class="form-group">
+                <label>Edit ebookisbn13:</label>
+                <input type="text" ng-model="book.ebookisbn13" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Edit printisbn10:</label>
+                <input type="text" ng-model="book.printisbn10" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Edit printisbn13:</label>
+                <input type="text" ng-model="book.printisbn13" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Edit librarysupported:</label>
+                <input type="text" ng-model="book.librarysupported" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Edit editiontype:</label>
+                <input type="text" ng-model="book.editiontype" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Edit previewlink:</label>
+                <input type="text" ng-model="book.previewlink" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Edit authors:</label>
+                <input type="text" ng-model="book.authors" placeholder="In case of many authors, separate them by commas" class="form-control">
+            </div>
+            <button ng-click="editDetails()" class="btn btn-success">Edit Book</button>
+            </form>
+        </div>
+
+    </div>
+</section>

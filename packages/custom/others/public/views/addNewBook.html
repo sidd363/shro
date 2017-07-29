@@ -1,0 +1,43 @@
+<section class="welcome container-fluid" data-ng-controller="addBookController">
+    <div class="col-md-12 first">
+    
+    <form>
+        <div class="form-group">
+            <label>Enter globalbookid:</label>
+            <input type="text" ng-model="book.globalbookid" class="form-control">
+        </div>
+        <div class="form-group">
+            <label> Enter title:</label>
+            <input type="text" ng-model="book.title" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Enter ebookisbn10:</label>
+            <input type="text" ng-model="book.ebookisbn10" class="form-control">
+        <div class="form-group">
+            <label>Enter ebookisbn13:</label>
+            <input type="text" ng-model="book.ebookisbn13"  class="form-control">
+        <div class="form-group">
+            <label>Enter printisbn10:</label>
+            <input type="text" ng-model="book.printisbn10"  class="form-control">
+        <div class="form-group">
+            <label>Enter printisbn13:</label>
+            <input type="text" ng-model="book.printisbn13"  class="form-control">
+        <div class="form-group">
+            <label>Enter librarysuppo</label>
+            <input type="text" ng-model="book.librarysupported"  class="form-control">
+        <div class="form-group">
+            <label>Enter editiontype:</label>
+            <input type="text" ng-model="book.editiontype"  class="form-control">
+        <div class="form-group">
+            <label>Enter previewlink:</label>
+            <input type="text" ng-model="book.previewlink"  class="form-control">
+        <div class="form-group">
+            <label>Enter authors:</label>
+            <input type="text" ng-model="book.authors" placeholder="In case of many authors, separate them by commas"  class="form-control">
+        </div>
+        <button ng-click="addDetails()" class="btn btn-primary">AddNewBook</button>
+        
+        
+    </form>
+    </div>
+</section>
